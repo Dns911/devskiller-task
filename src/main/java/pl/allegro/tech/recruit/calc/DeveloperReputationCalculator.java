@@ -16,9 +16,6 @@ public class DeveloperReputationCalculator {
         this.timeUtil = timeUtil;
     }
 
-    public DeveloperReputationCalculator() {
-    }
-
     public int calculate(Developer dev) {
         final int followersScore = Optional.ofNullable(dev.getFollowers())
                 .map(List::size)
