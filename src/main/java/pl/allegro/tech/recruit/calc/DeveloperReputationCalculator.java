@@ -10,7 +10,7 @@ public class DeveloperReputationCalculator {
     private static final int FOLLOWERS_MULTIPLIER = 2;
     private static final int HACKTOBER_BONUS = 10;
 
-    private TimeUtil timeUtil = new TimeUtil();
+    private final TimeUtil timeUtil;
 
     public DeveloperReputationCalculator(TimeUtil timeUtil) {
         this.timeUtil = timeUtil;
