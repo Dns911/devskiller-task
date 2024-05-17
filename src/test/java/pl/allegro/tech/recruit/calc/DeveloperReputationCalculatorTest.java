@@ -32,7 +32,7 @@ class DeveloperReputationCalculatorTest {
     @Test
     void testCalculateMethodFor3Followers_returnSuccess() {
         calculatorActual();
-        int actual = calculator.calculate(TestData1.getKate3());
+        int actual = calculator.calculate(TestData1.getDeveloperWith3());
         int expected = ZonedDateTime.now().getMonth() == Month.OCTOBER ? 16 : 6;
         assertEquals(expected, actual);
         verify(timeUtil).getZonedDateTime();
@@ -41,7 +41,7 @@ class DeveloperReputationCalculatorTest {
     @Test
     void testCalculateMethodFor2Followers_returnSuccess() {
         calculatorActual();
-        int actual = calculator.calculate(TestData1.getMike2());
+        int actual = calculator.calculate(TestData1.getDeveloperWith2());
         int expected = ZonedDateTime.now().getMonth() == Month.OCTOBER ? 14 : 4;
         assertEquals(expected, actual);
     }
@@ -50,7 +50,7 @@ class DeveloperReputationCalculatorTest {
     void testCalculateMethodFor2FollowersMockOctober_returnSuccess() {
         calculatorWithMockDate();
         when(timeUtil.getZonedDateTime()).thenReturn(TestData1.getMockDateOctober());
-        int actual = calculator.calculate(TestData1.getMike2());
+        int actual = calculator.calculate(TestData1.getDeveloperWith2());
         assertEquals(14, actual);
         verify(timeUtil, times(1)).getZonedDateTime();
     }
@@ -59,7 +59,7 @@ class DeveloperReputationCalculatorTest {
     void testCalculateMethodFor2FollowersMockNotOctober_returnSuccess() {
         calculatorWithMockDate();
         when(timeUtil.getZonedDateTime()).thenReturn(TestData1.getMockDateNotOctober());
-        int actual = calculator.calculate(TestData1.getMike2());
+        int actual = calculator.calculate(TestData1.getDeveloperWith2());
         assertEquals(4, actual);
         verify(timeUtil).getZonedDateTime();
     }

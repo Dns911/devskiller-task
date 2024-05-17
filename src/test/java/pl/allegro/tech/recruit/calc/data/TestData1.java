@@ -28,11 +28,11 @@ public class TestData1 {
         return new Developer("Ann", emptyListDevelopers());
     }
 
-    public static Developer getMike2() {
+    public static Developer getDeveloperWith2() {
         return new Developer("Mike", listOfDevelopers2());
     }
 
-    public static Developer getKate3() {
+    public static Developer getDeveloperWith3() {
         return new Developer("Kate", listOfDevelopers3());
     }
 
@@ -41,7 +41,7 @@ public class TestData1 {
     }
 
     public static List<Developer> listOfDevelopers3() {
-        return List.of(getJohn(), getAnn(), getMike2());
+        return List.of(getJohn(), getAnn(), getDeveloperWith2());
     }
 
     public static List<Developer> listOfDevelopers2() {
